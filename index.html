@@ -127,9 +127,9 @@
 
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono',monospace; font-size:0.76rem; font-weight:600;
-    text-transform:uppercase; color:var(--blue);
-    background:rgba(20,80,255,0.07); border:1px solid rgba(20,80,255,0.2);
+    font-family:'JetBrains Mono',monospace; font-size:0.76rem; font-weight:700;
+    text-transform:uppercase; color:var(--blue-dark); letter-spacing:0.03em;
+    background:rgba(20,80,255,0.09); border:1px solid rgba(20,80,255,0.28);
     padding:6px 14px; border-radius:6px; margin-bottom:22px;
   }
   .eyebrow .pulse{width:5px; height:5px; border-radius:1px; background:var(--blue);}
@@ -332,6 +332,29 @@
   .process-step h4{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.1rem; color:var(--navy); margin-bottom:6px;}
   .process-step p{color:var(--ink-soft); font-size:0.92rem;}
 
+  /* ---------- depoimentos ---------- */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:860px){.testi-grid{grid-template-columns:1fr; gap:20px;}}
+  .testi-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:26px 24px;}
+  .testi-stars{display:flex; gap:3px; margin-bottom:14px; color:#F5A623;}
+  .testi-card p.quote{color:var(--navy); font-size:0.96rem; margin-bottom:18px;}
+  .testi-author{display:flex; align-items:center; gap:10px;}
+  .testi-avatar{width:38px; height:38px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.9rem; flex-shrink:0;}
+  .testi-author .name{font-weight:600; font-size:0.9rem; color:var(--navy);}
+  .testi-author .role{font-size:0.8rem; color:var(--ink-soft);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px;}
+  .faq-item{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .faq-item summary{list-style:none; cursor:pointer; padding:18px 22px; font-weight:600; font-size:0.98rem; color:var(--navy); display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .plus{flex-shrink:0; width:20px; height:20px; position:relative;}
+  .faq-item summary .plus::before, .faq-item summary .plus::after{content:""; position:absolute; background:var(--blue); border-radius:2px; transition:transform .2s ease;}
+  .faq-item summary .plus::before{width:14px; height:2px; top:9px; left:3px;}
+  .faq-item summary .plus::after{width:2px; height:14px; top:3px; left:9px;}
+  .faq-item[open] summary .plus::after{transform:rotate(90deg); opacity:0;}
+  .faq-item p{padding:0 22px 20px; color:var(--ink-soft); font-size:0.93rem; max-width:64ch;}
+
   /* ---------- CTA band ---------- */
   .cta-band{
     background:linear-gradient(120deg, var(--navy) 0%, var(--blue-dark) 100%);
@@ -350,6 +373,7 @@
   footer{padding:44px 0 32px; border-top:1px solid var(--line); margin-top:8px;}
   .footer-grid{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px;}
   .footer-col p{color:var(--ink-soft); font-size:0.88rem; margin-top:8px; max-width:34ch;}
+  .footer-col h5{font-size:0.82rem; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:12px;}
   .footer-contacts{display:flex; flex-direction:column; gap:6px; font-size:0.88rem; color:var(--ink-soft);}
   .footer-contacts a:hover{color:var(--navy);}
   .footer-bottom{margin-top:32px; padding-top:20px; border-top:1px solid var(--line); font-size:0.8rem; color:var(--ink-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
@@ -408,6 +432,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1.1.5 1.1 1.1v3.4c0 .6-.5 1.1-1.1 1.1C10.6 21.2 2.8 13.4 2.8 3.1 2.8 2.5 3.3 2 3.9 2h3.4c.6 0 1.1.5 1.1 1.1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6"></path></svg>
             (41) 98879-9917
           </a>
+        </div>
+
+        <!-- TODO: confira/ajuste os números abaixo com os dados reais da empresa -->
+        <div class="trust-row">
+          <div class="trust-item">
+            <span class="num">100%</span>
+            <span class="lbl">Carga segurada</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">Curitiba</span>
+            <span class="lbl">E região metropolitana</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">Frota própria</span>
+            <span class="lbl">Sem intermediários</span>
+          </div>
         </div>
       </div>
 
@@ -641,6 +681,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- SERVIÇOS -->
+  <!-- SOBRE -->
+  <!-- TODO: substitua os textos e números abaixo pelos dados reais da LF Transportes (ano de fundação, CNPJ, nº de fretes já realizados) -->
+  <section id="sobre" class="section-pad" style="background:var(--white); border-top:1px solid var(--line);">
+    <div class="container about-grid">
+      <div class="reveal in">
+        <span class="eyebrow">Quem faz rodar</span>
+        <h2>Uma equipe que trata sua carga como se fosse a própria mudança</h2>
+        <p>A LF Transportes nasceu para resolver um problema simples: encontrar uma transportadora que responde rápido, cobra um preço justo e cumpre o combinado. Trabalhamos com frota própria, o que significa mais controle sobre prazos, cuidado com a carga e comunicação direta — sem intermediários.</p>
+        <p>Atendemos desde fretes urbanos pontuais até mudanças residenciais e comerciais completas, sempre com seguro incluso e acompanhamento até a entrega.</p>
+      </div>
+      <div class="about-stats reveal in">
+        <div class="about-stat">
+          <span class="num">100%</span>
+          <span class="lbl">Trajetos com seguro incluso</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">24h</span>
+          <span class="lbl">Resposta ao orçamento</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">PR</span>
+          <span class="lbl">Curitiba e região metropolitana</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">Própria</span>
+          <span class="lbl">Frota, sem terceirização</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="servicos" class="section-pad" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
     <div class="container">
       <div class="section-head reveal in">
@@ -707,6 +778,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- DEPOIMENTOS -->
+  <!-- TODO: troque estes depoimentos de exemplo por avaliações reais de clientes (ex.: copiadas do Google Meu Negócio, com autorização) -->
+  <section id="depoimentos" class="section-pad" style="background:var(--white); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head reveal in">
+        <span class="eyebrow">Quem já rodou com a gente</span>
+        <h2>Clientes que confiaram na carga</h2>
+        <p>Depoimentos de quem já contratou frete ou mudança com a LF Transportes.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal in">
+          <div class="testi-stars" aria-hidden="true">★★★★★</div>
+          <p class="quote">Precisava de um frete urgente e tive resposta no mesmo dia pelo WhatsApp. Carga chegou no prazo combinado e sem nenhum imprevisto.</p>
+          <div class="testi-author">
+            <span class="testi-avatar">R</span>
+            <div><span class="name" style="display:block;">Renata M.</span><span class="role">Frete intermunicipal</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal in">
+          <div class="testi-stars" aria-hidden="true">★★★★★</div>
+          <p class="quote">Mudança residencial completa, com móveis desmontados e remontados. Equipe cuidadosa e preço fechado sem surpresa.</p>
+          <div class="testi-author">
+            <span class="testi-avatar">C</span>
+            <div><span class="name" style="display:block;">Carlos E.</span><span class="role">Mudança residencial</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal in">
+          <div class="testi-stars" aria-hidden="true">★★★★★</div>
+          <p class="quote">Contratamos para transporte de carga fracionada da loja. Comunicação clara do início ao fim e entrega conferida certinho.</p>
+          <div class="testi-author">
+            <span class="testi-avatar">A</span>
+            <div><span class="name" style="display:block;">Ana P.</span><span class="role">Carga comercial</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- COMO FUNCIONA -->
   <section class="section-pad" style="background:var(--white); border-bottom:1px solid var(--line);">
     <div class="container">
@@ -755,6 +864,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="section-pad">
+    <div class="container">
+      <div class="section-head reveal in">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2>Antes de pedir o orçamento</h2>
+        <p>As dúvidas mais comuns de quem vai contratar um frete ou uma mudança.</p>
+      </div>
+      <div class="faq-list reveal in">
+        <details class="faq-item">
+          <summary>Vocês atendem outras cidades além de Curitiba?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Sim. Atendemos Curitiba e região metropolitana, além de fretes intermunicipais. Envie origem e destino pelo WhatsApp para confirmarmos prazo e valor.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o seguro da carga?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Todo trajeto contratado sai com seguro incluso, sem custo adicional. Em caso de dúvida sobre cobertura para itens de maior valor, informe no orçamento para alinharmos os detalhes.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O valor do orçamento pode mudar depois?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Não. Fechamos o valor antes da coleta, com base nas informações passadas. Qualquer alteração de escopo (peso, volume, distância) é alinhada com você antes de qualquer cobrança extra.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês fazem embalagem e desmontagem de móveis?<span class="plus" aria-hidden="true"></span></summary>
+          <p>Sim, para mudanças residenciais e comerciais oferecemos embalagem, proteção de itens, além de desmontagem e montagem de móveis.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo leva para eu receber uma resposta?<span class="plus" aria-hidden="true"></span></summary>
+          <p>O orçamento é feito pelo WhatsApp e a resposta costuma ser no mesmo dia útil, muitas vezes em poucas horas.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO / CTA -->
   <section id="contato" class="section-pad">
     <div class="container">
@@ -775,10 +917,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
+<!-- TODO: preencha CNPJ, endereço e horário reais da empresa nos campos indicados -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col">
+      <div class="footer-col" style="max-width:280px;">
         <a href="https://lftransportes.github.io/#top" class="logo">
           <img class="logo-mark" src="midia/logo_transparent.png" alt="LF Transportes">
           <span class="logo-text">LF Transportes</span>
@@ -786,9 +929,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Transporte de cargas e mudanças com frota própria e seguro incluso.</p>
       </div>
       <div class="footer-col">
+        <h5>Contato</h5>
         <div class="footer-contacts">
           <a data-track="whatsapp" href="https://wa.me/5541988799917">WhatsApp — (41) 98879-9917</a>
           <a href="tel:+5541988799917">Telefone — (41) 98879-9917</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Atendimento</h5>
+        <div class="footer-contacts">
+          <span>Curitiba e região metropolitana</span>
+          <span>Seg. a Sáb. — 8h às 18h <!-- confirme horário real --></span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <div class="footer-contacts">
+          <span>CNPJ: 00.000.000/0001-00 <!-- substitua pelo CNPJ real --></span>
+          <a href="https://lftransportes.github.io/#faq">Perguntas frequentes</a>
         </div>
       </div>
     </div>
