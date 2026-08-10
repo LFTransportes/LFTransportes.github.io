@@ -914,5 +914,29 @@
   revealEls.forEach(el=>io.observe(el));
 </script>
 
+<style>
+.whatsapp-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.whatsapp-bubble:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+.whatsapp-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+</style>
+<a href="https://wa.me/5541999990000?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento." class="whatsapp-bubble" data-track="whatsapp" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+  <img src="midia/WhatsApp.svg.webp" alt="WhatsApp">
+</a>
+
 </body>
 </html>
